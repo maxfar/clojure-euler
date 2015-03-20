@@ -1,5 +1,6 @@
 (ns clojure-euler.core
   (use clojure-euler.problem-1)
+  (use clojure-euler.problem-2)
   (:require [clojure.tools.cli :refer [parse-opts]])
   (:gen-class))
 
@@ -10,7 +11,8 @@
 
 (defn -main [& args]
   (def euler-problems
-    [{:name "Multiples of 3 and 5", :func (problem1)}])
+    [{:name "Multiples of 3 and 5", :func (problem1)}
+     {:name "Even Fibonacci numbers", :func (problem2)}])
 
   (def requested-question 
     (get-in (parse-opts args cli-options) [:options :question]))
